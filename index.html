@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherly</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <img src="Assets/logo.png" alt="<h1>Weatherly</h1>">
+    <p>Weatherly is a weather app which allows you to know the weather of some selected locations.  Designed with simplicity in mind, it helps you plan your day with ease, keeping you informed and prepared for any weather scenario.</p>
+    <h2>Select The city of your choice </h2>
+    <br>
+  <div id="cityButtons d-grid gap-2">
+  <div class="row">
+  <div class="col-5">
+  <div class="d-grid gap-2">
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Ludhiana','Punjab','IN',30.92,75.85)">Ludhiana</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Amritsar','Punjab','IN',31.63,74.87)">Amritsar</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Delhi','Delhi','IN',28.61,77.23)">Delhi</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Chandigarh','Chandigarh','IN',30.73,76.78)">Chandigarh</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Jammu','Jammu and Kashmir','IN',32.73,74.87)">Jammu</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Kashmir','Jammu and Kashmir','IN',34.05,74.80)">Kashmir</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Shimla','Himachal Pradesh','IN',31.10,77.17)">Shimla</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Jaipur','Rajasthan','IN',26.92,75.80)">Jaipur</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Ambala','Haryana','IN',30.38,76.77)">Ambala</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Dehradun','Uttarakhand','IN',30.32,78.03)">Dehradun</button>
+    </div>
+
+    
+  </div>
+  
+   <div class="col-5">
+  <div class="d-grid gap-2">
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Mumbai','Maharashtra','IN',19.07,72.87)">Mumbai</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Kolkata','West Bengal','IN',22.57,88.36)">Kolkata</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Bhopal','Madhya Pradesh','IN',23.25,77.41)">Bhopal</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Chennai','Tamil Nadu','IN',13.08,80.27)">Chennai</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Patna','Bihar','IN',25.61,85.16)">Patna</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Darbhangga','Bihar','IN',26.16,85.89)">Darbhangga</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Banglore','Karnataka','IN',12.97,77.59)">Banglore</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Lucknow','Uttar Pradesh','IN',26.85,80.91)">Lucknow</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Agra','Uttar Pradesh','IN',27.18,78.02)">Agra</button>
+    <button class="btn btn-lg btn-success" type="button" onclick="GetWeather('Thiruvananthapuram','Kerala','IN',8.52,76.94)">Thiruvananthapuram</button>
+    </div>
+    
+  </div>
+  </div>
+   </div>
+   </div>
+   </div>
+  </div>
+   <br>
+   <br>
+
+      <!-- Template for one city -->
+      <div id="mainWeather">
+<div class="row">
+  <div class="col-sm">
+      <div class="card mb-3">
+        <h3 class="card-header">Current Weather</h3>
+        <div class="row">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle"> -->
+          <div class="col-2"><img src="Assets\icons\tile004.png" alt="Icon" srcset="" id="mainImage" height="100px" width="100px"></div>
+          <div class="col-sm"><h1 id="desc_main">Sunny</h1><h2 id="temp_main"></h2></div>
+        </div>
+          <!-- <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text> -->
+        <!-- </svg> -->
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" ><span class="badge bg-primary">Minimum Temperature</span><h4 id="temp_min">Minimum Temperature</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">Maximum Temperature</span><h4 id="temp_max">Minimum Temperature</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">Wind Speed</span><h4 id="wind">Wind Speed</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">Humidity</span><h4 id="humidity">Humidity</h4></li>
+
+        </ul>
+        <div class="card-footer text-muted" id="current_date">
+          2 days ago
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card mb-3">
+        <h3 class="card-header">Air Quality</h3>
+        <div class="row">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle"> -->
+          <div class="col-2"><img src="Assets\icons\air-quality.png" alt="Icon" srcset=""></div>
+          <div class="col-sm"><h1 id="aqi_main">Poor</h1></div>
+        </div>
+          <!-- <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text> -->
+        <!-- </svg> -->
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" ><span class="badge bg-primary">PM 2.5</span><h4 id="aqi_pm25">PM 10</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">PM 10</span><h4 id="aqi_pm10">PM 10</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">NO2</span><h4 id="aqi_no2">NO2</h4></li>
+          <li class="list-group-item" ><span class="badge bg-primary">SO2 </span><h4 id="aqi_so2">SO2</h4></li>
+        </ul>
+
+        <div class="card-footer text-muted">
+         Data Provided by OPENWEATHER API
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container"><h1>5 Day Forcast</h1></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Day</th>
+          <th scope="col">Temprature</th>
+          <th scope="col">Condition</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr class="table-active">
+            <td id="day1.date">Active</td>
+            <td id="day1.temp">Column content</td>
+            <td id="day1.cond">Column content</td>
+          </tr>
+          <tr class="table-active">
+            <td id="day2.date">Active</td>
+            <td id="day2.temp">Column content</td>
+            <td id="day2.cond">Column content</td>
+          </tr>
+          <tr class="table-active">
+            <td id="day3.date">Active</td>
+            <td id="day3.temp">Column content</td>
+            <td id="day3.cond">Column content</td>
+          </tr>
+          <tr class="table-active">
+            <td id="day4.date">Active</td>
+            <td id="day4.temp">Column content</td>
+            <td id="day4.cond">Column content</td>
+          </tr>
+          <tr class="table-active">
+            <td id="day5.date">Active</td>
+            <td id="day5.temp">Column content</td>
+            <td id="day5.cond">Column content</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div>
+<script src="script.js"></script>
+        <!-- The Template ends here -->
+</body>
+</html>
