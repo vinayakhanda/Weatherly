@@ -5,10 +5,10 @@ function GetWeather(city, state, country, lat, lon) {
   // document.getElementById("cityButtons").style.display="none";
   document.location = ("#mainWeather");
   const apiKey = 'a2627557f804e7ecb9d92e88d8107c99';
-  const currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${apiKey}&units=metric`;
-  const forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${state},${country}&appid=${apiKey}&units=metric`;
+  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${apiKey}&units=metric`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${state},${country}&appid=${apiKey}&units=metric`;
   const aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  const iconUrl = `http://openweathermap.org/img/wn/`;
+  const iconUrl = `https://openweathermap.org/img/wn/`;
 
   fetch(currentWeatherUrl)
     .then(response => response.json())
