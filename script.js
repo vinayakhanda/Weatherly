@@ -1,4 +1,4 @@
-document.onload(document.getElementById("mainWeather").style.display = "none")
+document.onload(document.getElementById("mainWeather").style.display = "none");
 
 function GetWeather(city, state, country, lat, lon) {
   document.getElementById("mainWeather").style.display = "block";
