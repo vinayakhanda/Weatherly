@@ -22,7 +22,7 @@ function GetWeather(city, state, country, lat, lon) {
       document.getElementById("wind").innerHTML = Math.round(data.wind.speed) + "m/s";
       document.getElementById("humidity").innerHTML = Math.round(data.main.humidity);
       document.getElementById("mainImage").src = iconUrl+data.weather[0].icon+"@2x.png";
-
+      document.getElementById("cityHDR").innerHTML = "Current Weather of " + city;
       
 
 
